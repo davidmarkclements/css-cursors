@@ -1,10 +1,10 @@
-# css-cursors 0.0.7
+# css-cursors 1.0.5
 
 Css module of single purpose classes for cursors
 
 #### Stats
 
-781 | 136 | 136
+786 | 136 | 136
 ---|---|---
 bytes | selectors | declarations
 
@@ -16,15 +16,25 @@ bytes | selectors | declarations
 npm install --save-dev css-cursors
 ```
 
+Learn more about using css installed with npm:
+* https://webpack.github.io/docs/stylesheets.html
+* https://github.com/defunctzombie/npm-css
+
 #### With Git
 
+http:
 ```
 git clone https://github.com/tachyons-css/css-cursors
 ```
 
+ssh:
+```
+git clone git@github.com:tachyons-css/css-cursors.git
+```
+
 ## Usage
 
-#### Using with [PostCSS](https://github.com/postcss/postcss)
+#### Using with [Postcss](https://github.com/postcss/postcss)
 
 Import the css module
 
@@ -32,16 +42,24 @@ Import the css module
 @import "css-cursors";
 ```
 
-Then process the CSS using the [`tachyons-cli`](https://github.com/tachyons-css/tachyons-cli)
+Then process the css using the [`tachyons-cli`](https://github.com/tachyons-css/tachyons-cli)
 
 ```sh
 $ npm i -g tachyons-cli
-$ tachyons-cli path/to/css-file.css > dist/t.css
+$ tachyons path/to/css-file.css > dist/t.css
 ```
 
-#### Using the CSS
+#### Using the css
 
-The built CSS is located in the `css` directory. It contains an unminified and minified version.
+##### CDN
+The easiest and most simple way to use the css is to use the cdn hosted version. Include it in the head of your html with:
+
+```
+<link rel="stylesheet" href="http://unpkg.com/css-cursors@1.0.5/css/css-cursors.min.css" />
+```
+
+##### Locally
+The built css is located in the `css` directory. It contains an unminified and minified version.
 You can either cut and paste that css or link to it directly in your html.
 
 ```html
@@ -50,12 +68,13 @@ You can either cut and paste that css or link to it directly in your html.
 
 #### Development
 
-The source CSS files can be found in the `src` directory.
-Running `$ npm start` will process the source CSS and place the built CSS in the `css` directory.
+The source css files can be found in the `src` directory.
+Running `$ npm start` will process the source css and place the built css in the `css` directory.
 
-## The CSS
+## The css
 
 ```css
+/* Media Queries */
 /*
    CURSORS
 */
@@ -93,7 +112,7 @@ Running `$ npm start` will process the source CSS and place the built CSS in the
 .cursor-all-scroll { cursor: all-scroll; }
 .cursor-zoom-in { cursor: zoom-in; }
 .cursor-zoom-out { cursor: zoom-out; }
-@media screen and (min-width: 48em) {
+@media (min-width: 48em) {
  .cursor-auto-ns { cursor: auto; }
  .cursor-default-ns { cursor: default; }
  .cursor-none-ns { cursor: none; }
@@ -129,7 +148,7 @@ Running `$ npm start` will process the source CSS and place the built CSS in the
  .cursor-zoom-in-ns { cursor: zoom-in; }
  .cursor-zoom-out-ns { cursor: zoom-out; }
 }
-@media screen and (min-width:48em) and (max-width: 64em) {
+@media (min-width: 48em) and (max-width: 64em) {
  .cursor-auto-m { cursor: auto; }
  .cursor-default-m { cursor: default; }
  .cursor-none-m { cursor: none; }
@@ -165,7 +184,7 @@ Running `$ npm start` will process the source CSS and place the built CSS in the
  .cursor-zoom-in-m { cursor: zoom-in; }
  .cursor-zoom-out-m { cursor: zoom-out; }
 }
-@media screen and (min-width: 64em) {
+@media (min-width: 64em) {
  .cursor-auto-l { cursor: auto; }
  .cursor-default-l { cursor: default; }
  .cursor-none-l { cursor: none; }
@@ -219,3 +238,4 @@ Running `$ npm start` will process the source CSS and place the built CSS in the
 ## License
 
 ISC
+
